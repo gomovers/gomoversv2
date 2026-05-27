@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import heroMover from "@/assets/hero-mover.jpg";
-import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone } from "lucide-react";
+import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,36 +15,42 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
+    id: "local",
     icon: Home,
     title: "Local Move (4.5t Truck)",
     desc: "Studio, 1-bed and 2-bed homes — 2 movers, fuel, blankets and trolleys included.",
     price: "from $150/hr",
   },
   {
+    id: "large",
     icon: Truck,
     title: "Larger Homes (6.5t Truck)",
     desc: "3-bed, 4-bed and family homes. More space, fewer trips, one fixed hourly rate.",
     price: "from $215/hr",
   },
   {
+    id: "office",
     icon: Building2,
     title: "Office & Commercial",
     desc: "After-hours and weekend moves so your team is back to work Monday morning.",
     price: "custom quote",
   },
   {
+    id: "packing",
     icon: Package,
     title: "Packing Service",
     desc: "Full or partial packing with eco-friendly materials. We pack so you don't have to.",
     price: "add-on",
   },
   {
+    id: "piano",
     icon: Piano,
     title: "Piano & Antiques",
     desc: "Specialist crews trained for pianos, marble, vintage furniture and fragile pieces.",
     price: "specialist",
   },
   {
+    id: "single",
     icon: Sofa,
     title: "Single-Item Delivery",
     desc: "Sold a couch on Marketplace? We'll move it across town for less than brunch.",
@@ -111,36 +118,7 @@ function Index() {
 
           {/* RIGHT: Service selector */}
           <div className="flex flex-col">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-brand-foreground">
-                <Truck className="h-5 w-5" />
-              </div>
-              <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
-                Select your service
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              {services.map(({ icon: Icon, title, desc, price }) => (
-                <button
-                  key={title}
-                  className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary transition group-hover:bg-brand group-hover:text-brand-foreground">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-baseline justify-between gap-3">
-                      <h3 className="font-bold text-primary">{title}</h3>
-                      <span className="shrink-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                        {price}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-                  </div>
-                </button>
-              ))}
-            </div>
+            <BookingPanel />
 
             {/* Trust badges */}
             <div className="mt-6 grid grid-cols-2 gap-3 rounded-2xl bg-secondary p-4 sm:grid-cols-4">

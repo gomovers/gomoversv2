@@ -3,6 +3,7 @@ import { useState } from "react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
 import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail } from "lucide-react";
+import { createBooking } from "@/server/createBooking";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,6 +96,34 @@ type ServiceId = typeof services[number]["id"];
 function BookingPanel() {
   const [selected, setSelected] = useState<ServiceId | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError(null);
+    const fd = new FormData(e.currentTarget);
+    try {
+      await createBooking({
+        data: {
+          service: selected!,
+          origin: fd.get("origin") as string,
+          destination: fd.get("destination") as string,
+          size: fd.get("size") as string,
+          preferred_date: fd.get("date") as string,
+          name: fd.get("name") as string,
+          phone: fd.get("phone") as string,
+          email: fd.get("email") as string,
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   if (selected) {
     const svc = services.find((s) => s.id === selected)!;
@@ -129,10 +158,7 @@ function BookingPanel() {
             </p>
           </div>
         ) : (
-          <form
-            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-            className="flex flex-col gap-4"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <Field icon={MapPin} label="Pick-up suburb" name="origin" placeholder="e.g. Mermaid Beach" />
             <Field icon={MapPin} label="Drop-off suburb" name="destination" placeholder="e.g. Burleigh Heads" />
 
@@ -156,11 +182,17 @@ function BookingPanel() {
 
             <Field icon={Mail} label="Email" name="email" type="email" placeholder="you@example.com" />
 
+            {error && (
+              <p className="rounded-xl bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                {error}
+              </p>
+            )}
             <button
               type="submit"
-              className="mt-2 rounded-xl bg-brand px-5 py-3 text-base font-bold text-brand-foreground shadow-sm transition hover:opacity-90"
+              disabled={isLoading}
+              className="mt-2 rounded-xl bg-brand px-5 py-3 text-base font-bold text-brand-foreground shadow-sm transition hover:opacity-90 disabled:opacity-60"
             >
-              See my hourly rate →
+              {isLoading ? "Sending…" : "See my hourly rate →"}
             </button>
             <p className="text-center text-xs text-muted-foreground">
               No phone calls. No spam. Just a written quote in your inbox.

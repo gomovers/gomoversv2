@@ -1,7 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
+  "name": "gomoversv2",
+  "account_id": "2dec23566a1b83fe3485df30c5de99f4",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "workers_dev": true
 }

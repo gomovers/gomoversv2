@@ -69,7 +69,7 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <div className="flex items-center">
-          <img src={logoFinal} alt="GoMovers" className="h-10 w-auto" />
+          <img src={logoFinal} alt="GoMovers" className="h-14 w-auto" />
         </div>
         <div className="hidden items-center gap-6 md:flex">
           <a href="tel:0452261274" className="flex items-center gap-2 text-sm font-semibold text-primary">

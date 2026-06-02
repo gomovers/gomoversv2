@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroMover from "@/assets/hero-mover.jpg";
+import logoFinal from "@/assets/logo_final.png";
 import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -67,13 +68,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-brand">
-            <Truck className="h-5 w-5" />
-          </div>
-          <span className="text-xl font-extrabold tracking-tight text-primary">
-            Go<span className="text-brand">Movers</span>
-          </span>
+        <div className="flex items-center">
+          <img src={logoFinal} alt="GoMovers" className="h-10 w-auto" />
         </div>
         <div className="hidden items-center gap-6 md:flex">
           <a href="tel:0452261274" className="flex items-center gap-2 text-sm font-semibold text-primary">

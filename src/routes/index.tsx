@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef, type ReactNode } from "react"
 import useEmblaCarousel from "embla-carousel-react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
-import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail, ChevronLeft, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { createBooking } from "@/server/createBooking";
 
 export const Route = createFileRoute("/")({
@@ -566,9 +566,31 @@ function IndexPage() {
 
       <footer className="border-t border-border bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 py-8 text-sm">
-          <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-            <span>© 2026 GoMovers Australia · Unit 3/26 William St, Mermaid Beach QLD 4218</span>
-            <span>📞 0452 261 274 · Open 24 hours</span>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <span>© 2026 GoMovers Australia · Based in Gold Coast &amp; Brisbane</span>
+            <div className="flex items-center gap-4">
+              <span>📞 0452 261 274 · Mon–Sat 7am–5pm · Sunday closed</span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/gomoversremoval/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GoMovers on Instagram"
+                  className="text-primary-foreground/70 transition hover:text-brand"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/gomoversremovalservices"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GoMovers on Facebook"
+                  className="text-primary-foreground/70 transition hover:text-brand"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

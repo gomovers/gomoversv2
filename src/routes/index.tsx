@@ -133,7 +133,7 @@ function Header() {
 
 function SocialProofBadges() {
   return (
-    <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+    <div className="mt-10 hidden flex-wrap items-center justify-center gap-4 lg:flex">
       <a
         href="https://www.airtasker.com/users/cristobal-c-6158778/"
         target="_blank"
@@ -482,8 +482,32 @@ function IndexPage() {
             </div>
           </div>
 
+          {/* Mobile-only compact badges — sits between hero and booking on small screens */}
+          <div className="flex gap-2 lg:hidden">
+            <a
+              href="https://www.airtasker.com/users/cristobal-c-6158778/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-brand bg-card px-3 py-2 shadow-sm transition active:scale-95"
+            >
+              <Star className="h-3.5 w-3.5 shrink-0 fill-current text-brand" />
+              <span className="text-[13px] font-bold text-primary">4.9 Airtasker</span>
+              <span className="text-[13px] text-muted-foreground">· 1,447</span>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/FZpwTAAiWAGw77gd8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 shadow-sm transition hover:border-brand active:scale-95"
+            >
+              <Star className="h-3.5 w-3.5 shrink-0 fill-current text-brand" />
+              <span className="text-[13px] font-bold text-primary">4.9 Google</span>
+              <span className="text-[13px] text-muted-foreground">· 16</span>
+            </a>
+          </div>
+
           {/* RIGHT: Service selector */}
-          <div className="flex flex-col">
+          <div className="flex flex-col lg:col-start-2">
             <BookingPanel />
 
             {/* Trust badges */}

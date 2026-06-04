@@ -1,15 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
-import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail } from "lucide-react";
+import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { createBooking } from "@/server/createBooking";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Book a Move — GoMovers | Gold Coast · Brisbane · Byron Bay" },
-      { name: "description", content: "Honest hourly rates from $150/hr. 2 movers + truck. Door-to-door billing. Fully insured. 1,461+ five-star reviews." },
+      { name: "description", content: "Honest hourly rates from $150/hr. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews." },
     ],
   }),
   component: Index,
@@ -65,6 +66,51 @@ const excluded = [
   "Flammables", "Paint", "Toxic Waste", "Weapons", "Tyres", "Marble Slabs",
 ];
 
+type ReviewSource = "Airtasker" | "Google";
+
+const reviews: { name: string; source: ReviewSource; text: string }[] = [
+  {
+    name: "Jason T.",
+    source: "Airtasker",
+    text: "These guys were exceptional! They went over and above, nothing was too much hassle. We moved from Manly — a house with lots of stairs, they moved our entire house, piano, white goods, all boxes etc, and drove to Tallebudgera valley. They were lovely to our baby too. Highly recommend and will use again!",
+  },
+  {
+    name: "Marie Luise von Koeller",
+    source: "Google",
+    text: "I relocated from Gold Coast to Brisbane and they offered the best and most reliable service. They got in on time, were very detail-oriented with my things, clean, organized and efficient. Everything came perfect! Really recommend for anyone looking to move!",
+  },
+  {
+    name: "Nikki V.",
+    source: "Airtasker",
+    text: "Thanks so much Cristobal for arriving early, working hard in the heavy rain, and being flexible to take some things to storage and donation. Great job team!",
+  },
+  {
+    name: "Albert Averdunk",
+    source: "Google",
+    text: "Best movers ever, always on time, wrap sensitive furniture, and very friendly.",
+  },
+  {
+    name: "Esther-Jeff L.",
+    source: "Airtasker",
+    text: "Arrived on time and able to move everything within the quoted hours. Communication was very easy. Definitely recommend!",
+  },
+  {
+    name: "Simone Bennett-Smith",
+    source: "Google",
+    text: "I have complete confidence in recommending Gomovers — I have used the team several times over the past six months to move a large family home filled with heavy furniture: antique pieces, large cabinets, delicate art works and fragile items…",
+  },
+  {
+    name: "Freddie J.",
+    source: "Airtasker",
+    text: "Cristobal and Vini were awesome — did a great job and would highly recommend them!!",
+  },
+  {
+    name: "Pruthvi R.",
+    source: "Airtasker",
+    text: "They are really great guys. I would highly recommend.",
+  },
+];
+
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
@@ -82,6 +128,131 @@ function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function SocialProofBadges() {
+  return (
+    <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="https://www.airtasker.com/users/cristobal-c-6158778/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 rounded-2xl border border-brand bg-card px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      >
+        <Star className="h-5 w-5 fill-current text-brand" />
+        <span className="text-sm font-bold text-primary">4.9 on Airtasker</span>
+        <span className="text-sm text-muted-foreground">· 1,447 reviews</span>
+      </a>
+      <a
+        href="https://maps.app.goo.gl/FZpwTAAiWAGw77gd8"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 rounded-2xl border border-border bg-card px-5 py-3 shadow-sm transition hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
+      >
+        <Star className="h-5 w-5 fill-current text-brand" />
+        <span className="text-sm font-bold text-primary">4.9 on Google</span>
+        <span className="text-sm text-muted-foreground">· 16 reviews</span>
+      </a>
+    </div>
+  );
+}
+
+function TestimonialsCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      emblaApi?.scrollNext();
+    }, 5000);
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    if (isPaused) {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    } else {
+      startAutoplay();
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [emblaApi, isPaused, startAutoplay]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  return (
+    <section className="mt-20">
+      <div className="mb-8 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary">
+            <Star className="h-5 w-5 fill-current text-brand" />
+          </div>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
+            What our customers say
+          </h2>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={scrollPrev}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-sm transition hover:border-brand hover:text-brand"
+            aria-label="Previous review"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-sm transition hover:border-brand hover:text-brand"
+            aria-label="Next review"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+
+      <div
+        ref={emblaRef}
+        className="overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="flex">
+          {reviews.map((review, i) => (
+            <div
+              key={i}
+              className="min-w-0 flex-[0_0_100%] px-1 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+            >
+              <div className="mx-2 flex h-full flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} className="h-4 w-4 fill-current text-brand" />
+                    ))}
+                  </div>
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                      review.source === "Airtasker"
+                        ? "bg-brand text-brand-foreground"
+                        : "bg-primary text-primary-foreground"
+                    }`}
+                  >
+                    {review.source}
+                  </span>
+                </div>
+                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                  "{review.text}"
+                </p>
+                <p className="text-sm font-bold text-primary">{review.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -299,7 +470,7 @@ function IndexPage() {
                 ))}
               </div>
               <span className="text-sm font-semibold text-primary">
-                4.9 · 1,461 reviews
+                4.9 · 1,447 reviews
               </span>
             </div>
           </div>
@@ -311,7 +482,7 @@ function IndexPage() {
             {/* Trust badges */}
             <div className="mt-6 grid grid-cols-2 gap-3 rounded-2xl bg-secondary p-4 sm:grid-cols-4">
               {[
-                { label: "1,461 5-star reviews", icon: Star },
+                { label: "1,447 5-star reviews", icon: Star },
                 { label: "4,200+ moves served", icon: Truck },
                 { label: "Fully insured $50k", icon: Shield },
                 { label: "Door-to-door billing", icon: Home },
@@ -324,6 +495,12 @@ function IndexPage() {
             </div>
           </div>
         </div>
+
+        {/* Social proof badges */}
+        <SocialProofBadges />
+
+        {/* Testimonials carousel */}
+        <TestimonialsCarousel />
 
         {/* Excluded items */}
         <section className="mt-20">
@@ -367,4 +544,3 @@ function IndexPage() {
     </div>
   );
 }
-

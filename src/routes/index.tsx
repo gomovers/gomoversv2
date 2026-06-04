@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, type ReactNode } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
@@ -156,6 +156,13 @@ function SocialProofBadges() {
       </a>
     </div>
   );
+}
+
+function ClientOnly({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+  return <>{children}</>;
 }
 
 function TestimonialsCarousel() {
@@ -499,8 +506,8 @@ function IndexPage() {
         {/* Social proof badges */}
         <SocialProofBadges />
 
-        {/* Testimonials carousel */}
-        <TestimonialsCarousel />
+        {/* Testimonials carousel — client-only: embla needs DOM */}
+        <ClientOnly><TestimonialsCarousel /></ClientOnly>
 
         {/* Excluded items */}
         <section className="mt-20">

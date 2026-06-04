@@ -16,7 +16,7 @@ const schema = z.object({
 export type BookingInput = z.infer<typeof schema>;
 
 export const createBooking = createServerFn({ method: "POST" })
-  .validator((data: unknown) => schema.parse(data))
+  .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;

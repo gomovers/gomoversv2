@@ -72,14 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "GoMovers — Gold Coast Removalists | from $150/hr" },
+      { name: "description", content: "Honest hourly rates from $150/hr. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews. Serving Gold Coast, Brisbane & Byron Bay." },
+      { name: "author", content: "GoMovers" },
+      { property: "og:title", content: "GoMovers — Gold Coast Removalists | from $150/hr" },
+      { property: "og:description", content: "Honest hourly rates from $150/hr. 2 movers + truck, fuel & blankets included. 4.9 stars · 1,447 reviews. Book online in 2 minutes." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://gomovers.com.au" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@GoMoversAU" },
     ],
     links: [
       {

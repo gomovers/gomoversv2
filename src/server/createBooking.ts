@@ -25,7 +25,11 @@ export const createBooking = createServerFn({ method: "POST" })
     const notifyEmail = env.NOTIFY_EMAIL ?? process.env.NOTIFY_EMAIL;
 
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error("Server configuration error");
+      throw new Error(
+        `CFG url_env=${!!env.SUPABASE_URL} url_proc=${!!process.env.SUPABASE_URL} ` +
+        `key_env=${!!env.SUPABASE_SERVICE_ROLE_KEY} key_proc=${!!process.env.SUPABASE_SERVICE_ROLE_KEY} ` +
+        `envKeys=${Object.keys(env).join("|")}`
+      );
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey);

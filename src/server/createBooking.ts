@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { env } from "cloudflare:workers";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
@@ -18,10 +19,10 @@ export type BookingInput = z.infer<typeof schema>;
 export const createBooking = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    const resendKey = process.env.RESEND_API_KEY;
-    const notifyEmail = process.env.NOTIFY_EMAIL;
+    const supabaseUrl = env.SUPABASE_URL ?? process.env.SUPABASE_URL;
+    const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const resendKey = env.RESEND_API_KEY ?? process.env.RESEND_API_KEY;
+    const notifyEmail = env.NOTIFY_EMAIL ?? process.env.NOTIFY_EMAIL;
 
     if (!supabaseUrl || !supabaseKey) {
       throw new Error("Server configuration error");

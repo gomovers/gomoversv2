@@ -12,6 +12,22 @@ export const Route = createFileRoute("/")({
       { title: "Book a Move — GoMovers | Gold Coast · Brisbane · Byron Bay" },
       { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How much do removalists cost on the Gold Coast?", "acceptedAnswer": { "@type": "Answer", "text": "From $160/hr + GST for 2 movers and a truck, with fuel, blankets and trolleys included. We bill door-to-door and confirm the final figure before we start." } },
+            { "@type": "Question", "name": "What areas do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "Gold Coast, Brisbane, Byron Bay and surrounds, including interstate Queensland–NSW relocations." } },
+            { "@type": "Question", "name": "What's included in the hourly rate?", "acceptedAnswer": { "@type": "Answer", "text": "Two professional movers, a truck, fuel, moving blankets and trolleys. Fully insured up to $50k." } },
+            { "@type": "Question", "name": "Are you insured?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — every move is covered by $50,000 transit insurance." } },
+            { "@type": "Question", "name": "How do I get a quote?", "acceptedAnswer": { "@type": "Answer", "text": "Fill in the online form in about 2 minutes and we send a written hourly rate. No phone calls, no spam." } },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
@@ -460,6 +476,10 @@ function IndexPage() {
       <Header />
 
       <main className="mx-auto max-w-7xl px-6 py-10 lg:py-16">
+        <h1 className="mb-8 text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">
+          Gold Coast &amp; Brisbane Removalists — from $160/hr + GST
+        </h1>
+
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
           {/* LEFT: Hero image with review badge */}
           <div className="relative overflow-hidden rounded-3xl shadow-xl ring-1 ring-border">
@@ -561,6 +581,89 @@ function IndexPage() {
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Australian transport regulations prevent us from moving these. Contact a specialist service.
           </p>
+        </section>
+
+        {/* Areas we serve */}
+        <section className="mt-20">
+          <div className="mb-8 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary">
+              <MapPin className="h-5 w-5" />
+            </div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
+              Areas we serve
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h3 className="mb-2 font-bold text-primary">Gold Coast</h3>
+              <p className="text-sm text-muted-foreground">
+                Local removalists across the Gold Coast — Mermaid Beach, Burleigh Heads,
+                Broadbeach, Surfers Paradise, Robina and surrounds. Studio to family-home
+                moves, 2 movers + truck from $160/hr + GST.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h3 className="mb-2 font-bold text-primary">Brisbane</h3>
+              <p className="text-sm text-muted-foreground">
+                Trusted Brisbane removalists for homes and offices. Reliable, on-time crews
+                with door-to-door billing and no hidden fees.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h3 className="mb-2 font-bold text-primary">Byron Bay</h3>
+              <p className="text-sm text-muted-foreground">
+                Removalists serving Byron Bay and the Northern Rivers, plus Gold Coast–Byron
+                and Brisbane–Byron relocations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why choose GoMovers */}
+        <section className="mt-12">
+          <div className="mb-4 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary">
+              <Shield className="h-5 w-5" />
+            </div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
+              Why choose GoMovers
+            </h2>
+          </div>
+          <p className="max-w-2xl leading-relaxed text-muted-foreground">
+            GoMovers charges honest hourly rates — what you see is what you pay, with no
+            hidden fees or fuel levies. Every job includes 2 experienced movers, a truck,
+            fuel, blankets and trolleys. We're fully insured up to $50,000 and have earned
+            4.9 stars from over 1,400 customers across Airtasker and Google.
+          </p>
+        </section>
+
+        {/* FAQ */}
+        <section className="mt-12 mb-4">
+          <div className="mb-8 flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary">
+              <Star className="h-5 w-5 fill-current text-brand" />
+            </div>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-primary">
+              Frequently asked questions
+            </h2>
+          </div>
+          <div className="flex max-w-2xl flex-col gap-3">
+            {[
+              { q: "How much do removalists cost on the Gold Coast?", a: "From $160/hr + GST for 2 movers and a truck, with fuel, blankets and trolleys included. We bill door-to-door and confirm the final figure before we start." },
+              { q: "What areas do you cover?", a: "Gold Coast, Brisbane, Byron Bay and surrounds, including interstate Queensland–NSW relocations." },
+              { q: "What's included in the hourly rate?", a: "Two professional movers, a truck, fuel, moving blankets and trolleys. Fully insured up to $50k." },
+              { q: "Are you insured?", a: "Yes — every move is covered by $50,000 transit insurance." },
+              { q: "How do I get a quote?", a: "Fill in the online form in about 2 minutes and we send a written hourly rate. No phone calls, no spam." },
+            ].map(({ q, a }) => (
+              <details key={q} className="group rounded-2xl border border-border bg-card shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-semibold text-primary">
+                  {q}
+                  <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="px-5 pb-5 text-sm text-muted-foreground">{a}</p>
+              </details>
+            ))}
+          </div>
         </section>
       </main>
 

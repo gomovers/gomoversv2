@@ -5,5 +5,12 @@
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
-  "workers_dev": true
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "gomovers.com.au/*", "zone_name": "gomovers.com.au" },
+    { "pattern": "www.gomovers.com.au/*", "zone_name": "gomovers.com.au" }
+  ],
+  "vars": {
+    "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR5d2phYmRscnNweGJxZXpvdmxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NzMxMzUsImV4cCI6MjA5NjA0OTEzNX0.WzyE-2y9ex9pzJWe1NnRAPheZFinw5IxZxOxeDYNrxM"
+  }
 }

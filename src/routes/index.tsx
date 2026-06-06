@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Book a Move — GoMovers | Gold Coast · Brisbane · Byron Bay" },
-      { name: "description", content: "Honest hourly rates from $150/hr. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews." },
+      { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews." },
     ],
   }),
   component: Index,
@@ -22,14 +22,14 @@ const services = [
     icon: Home,
     title: "Local Move (4.5t Truck)",
     desc: "Studio, 1-bed and 2-bed homes — 2 movers, fuel, blankets and trolleys included.",
-    price: "from $150/hr",
+    price: "from $160/hr + GST",
   },
   {
     id: "large",
     icon: Truck,
     title: "Larger Homes (6.5t Truck)",
     desc: "3-bed, 4-bed and family homes. More space, fewer trips, one fixed hourly rate.",
-    price: "from $215/hr",
+    price: "from $215/hr + GST",
   },
   {
     id: "office",

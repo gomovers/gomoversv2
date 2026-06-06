@@ -25,11 +25,7 @@ export const createBooking = createServerFn({ method: "POST" })
     const notifyEmail = env.NOTIFY_EMAIL ?? process.env.NOTIFY_EMAIL;
 
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error(
-        `CFG url_env=${!!env.SUPABASE_URL} url_proc=${!!process.env.SUPABASE_URL} ` +
-        `key_env=${!!env.SUPABASE_SERVICE_ROLE_KEY} key_proc=${!!process.env.SUPABASE_SERVICE_ROLE_KEY} ` +
-        `envKeys=${Object.keys(env).join("|")}`
-      );
+      throw new Error("Server configuration error. Please try again later.");
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -68,7 +64,7 @@ export const createBooking = createServerFn({ method: "POST" })
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "onboarding@resend.dev",
+          from: "GoMovers <noreply@gomovers.com.au>",
           to: notifyEmail,
           subject: `New booking request — ${data.service}`,
           html: `<h2>New GoMovers Booking</h2><table>${rows}</table>`,

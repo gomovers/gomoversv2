@@ -26,3 +26,15 @@ Do NOT reintroduce the old navy/orange placeholder palette.
 
 ## Planned agents (future)
 Lead/quote responses, review management (Google + Airtasker), Gmail triage for gomovers.com.au, SEO/content.
+
+## Gotchas / lecciones
+- Trabajar siempre en C:\dev\gomoversv2 (fuera de OneDrive) con npm. Node.js instalado.
+- Para publicar: npm run build && npx wrangler deploy. git push NO despliega.
+- Secretos REALES (Resend, service_role): cargarlos en el dashboard de Cloudflare
+  (Workers > Settings > Variables and Secrets), NUNCA por el pipe de PowerShell
+  (corrompe el valor con un char extra) ni en el chat.
+- Valores públicos (Supabase anon key): como vars en wrangler.jsonc.
+- Cloudflare env: leer con import { env } from "cloudflare:workers" ?? process.env.
+- Librerías solo-cliente (embla) van envueltas en <ClientOnly> o crashean el SSR.
+- No tocar registros MX/TXT de Google en Cloudflare (rompe el email).
+- Supabase: RLS activo necesita política de INSERT para anon en bookings.

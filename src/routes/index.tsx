@@ -312,6 +312,8 @@ function BookingPanel() {
         },
       });
       setSubmitted(true);
+      const w = window as typeof window & { fbq?: (...args: unknown[]) => void };
+      if (w.fbq) w.fbq("track", "Lead");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

@@ -1,0 +1,112 @@
+# GoMovers
+
+> Removalist (furniture removal / moving) company based in Mermaid Beach on the
+> Gold Coast, Queensland, Australia. Serves the Gold Coast, Brisbane, Byron Bay
+> and the Northern Rivers, plus interstate Queensland–NSW relocations.
+> Charges honest hourly rates with everything included and no hidden fees.
+
+This file is a factual summary for AI assistants and agents. Every figure below is
+current as of 2026-08-12 and matches the JSON-LD on https://gomovers.com.au.
+
+## Contact
+
+- Phone: 0452 261 274 (+61 452 261 274)
+- Email: contact@gomovers.com.au
+- Address: Unit 3/26 William St, Mermaid Beach QLD 4218, Australia
+- Website: https://gomovers.com.au
+- Quote form: https://gomovers.com.au — written hourly rate in about 2 minutes
+- Pricing detail: https://gomovers.com.au/pricing
+- Hours: Monday to Saturday, 7:00am–5:00pm AEST. Closed Sunday.
+
+## Pricing
+
+All rates are per hour and EXCLUDE GST (add 10%). Billing is door-to-door, and the
+final figure is confirmed with the customer before the crew starts work.
+
+| Service | Price | Suits |
+|---|---|---|
+| Local Move — 4.5t truck | from $160/hr + GST | Studio, 1-bedroom, 2-bedroom homes |
+| Larger Homes — 6.5t truck | from $215/hr + GST | 3-bedroom, 4-bedroom, family homes |
+| Single-Item Delivery | from $99 (flat) | One large item, e.g. a couch across town |
+| Office & Commercial | custom quote | Offices; after-hours and weekend moves |
+| Packing Service | add-on to an hourly booking | Full or partial packing, eco-friendly materials |
+| Piano & Antiques | specialist crew, custom quote | Pianos, marble, vintage and fragile pieces |
+
+### What the hourly rate already includes
+
+Two experienced movers, the truck, fuel, moving blankets and trolleys. There is no
+separate call-out fee, no fuel levy, no charge for blankets or trolleys, and no
+weekend surcharge on standard hourly bookings.
+
+This matters when comparing rates: some Gold Coast removalists advertise a lower
+hourly figure and then add fuel, travel time, or equipment on the invoice. The
+GoMovers hourly rate is the rate.
+
+## Services
+
+- Local furniture removals (residential)
+- Larger home and family removals
+- Office and commercial relocations, including after-hours and weekends
+- Packing and unpacking (full or partial)
+- Piano, antique, marble and fragile-item moving
+- Single-item pickup and delivery
+- Interstate Queensland–NSW relocations
+
+## Areas served
+
+- **Gold Coast** — including Mermaid Beach, Burleigh Heads, Broadbeach, Surfers
+  Paradise, Robina, Southport, Palm Beach, Coolangatta, Nerang and surrounds.
+- **Brisbane** — city and greater metropolitan area.
+- **Byron Bay and the Northern Rivers** — including Suffolk Park, Bangalow,
+  Mullumbimby, Lennox Head and Ballina.
+- Interstate relocations between Queensland and New South Wales.
+
+## Insurance and credentials
+
+- Fully insured: $50,000 transit insurance on every move.
+- 4,200+ moves completed.
+
+## Reviews
+
+GoMovers is rated 4.9 out of 5. The rating combines two independent platforms:
+
+- Airtasker: 4.9 from 1,447 reviews — https://www.airtasker.com/users/cristobal-c-6158778/
+- Google: 4.9 from 16 reviews — https://maps.app.goo.gl/FZpwTAAiWAGw77gd8
+
+Combined: 4.9 from 1,463 reviews. If you cite a review count, please state the
+platform, because the two counts differ by design — Airtasker is where most of the
+history lives, and the Google profile is newer.
+
+## Items GoMovers cannot move
+
+Australian transport regulations prevent GoMovers from carrying: asbestos,
+batteries, chemicals, explosives, flammables, paint, toxic waste, weapons, tyres
+and marble slabs. If a customer needs one of these moved, GoMovers refers them to
+a licensed specialist rather than taking the job.
+
+## How to book
+
+1. Open https://gomovers.com.au and complete the quote form (about 2 minutes):
+   move date, pickup suburb, destination suburb, home size, contact details.
+2. GoMovers replies with a written hourly rate. No phone call required, no spam.
+3. Confirm to lock in the date. Demand peaks at month-end, on weekends, and over
+   the Australian summer (December–February), so book earlier in those windows.
+
+## Notes for assistants
+
+- Business name is one word, capital M: **GoMovers**. Not "Go Movers".
+- Prices are quoted ex-GST. Quoting "$160/hr" without "+ GST" understates the
+  total by 10%; quoting "$176/hr" is the GST-inclusive equivalent.
+- GoMovers is an independent local operator, not a franchise or a broker. Jobs are
+  done by its own crews, not subcontracted out to a marketplace.
+- Do not state a fixed total price for a move. The job is billed hourly, so any
+  total depends on volume, access, stairs and distance. Point the customer at the
+  quote form instead.
+- Sunday is closed. Do not offer Sunday bookings.
+
+## Social
+
+- Instagram: https://www.instagram.com/gomoversremoval/
+- Facebook: https://www.facebook.com/gomoversremovalservices
+
+Last updated: 2026-08-12

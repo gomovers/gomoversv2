@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Guides7MovingMistakesRouteImport } from './routes/guides/7-moving-mistakes'
 
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Guides7MovingMistakesRoute = Guides7MovingMistakesRouteImport.update({
+  id: '/guides/7-moving-mistakes',
+  path: '/guides/7-moving-mistakes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
+  '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pricing'
+  fullPaths: '/' | '/pricing' | '/guides/7-moving-mistakes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pricing'
-  id: '__root__' | '/' | '/pricing'
+  to: '/' | '/pricing' | '/guides/7-moving-mistakes'
+  id: '__root__' | '/' | '/pricing' | '/guides/7-moving-mistakes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PricingRoute: typeof PricingRoute
+  Guides7MovingMistakesRoute: typeof Guides7MovingMistakesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/7-moving-mistakes': {
+      id: '/guides/7-moving-mistakes'
+      path: '/guides/7-moving-mistakes'
+      fullPath: '/guides/7-moving-mistakes'
+      preLoaderRoute: typeof Guides7MovingMistakesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PricingRoute: PricingRoute,
+  Guides7MovingMistakesRoute: Guides7MovingMistakesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

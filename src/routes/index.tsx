@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect, useCallback, useRef, type ReactNode } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
 import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail, ChevronLeft, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { createBooking } from "@/server/createBooking";
+import { GuideDownload } from "@/components/GuideDownload";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -638,6 +639,11 @@ function IndexPage() {
             4.9 stars from over 1,400 customers across Airtasker and Google.
           </p>
         </section>
+
+        {/* Guide download */}
+        <div className="mt-8">
+          <GuideDownload compact source="home-page" />
+        </div>
 
         {/* FAQ */}
         <section className="mt-12 mb-4">

@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { ClientOnly } from "@/components/ClientOnly";
+import { ChatWidget } from "@/components/chat-widget/ChatWidget";
 
 const SITE = "https://gomovers.com.au";
 
@@ -380,6 +382,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <ClientOnly>
+        <ChatWidget />
+      </ClientOnly>
     </QueryClientProvider>
   );
 }

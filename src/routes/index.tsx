@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, useEffect, useCallback, useRef, type ReactNode } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroMover from "@/assets/hero-mover.jpg";
 import logoFinal from "@/assets/logo_final.png";
 import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, ArrowLeft, Calendar, MapPin, User, Mail, ChevronLeft, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { createBooking } from "@/server/createBooking";
 import { GuideDownload } from "@/components/GuideDownload";
+import { ClientOnly } from "@/components/ClientOnly";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -173,13 +174,6 @@ function SocialProofBadges() {
       </a>
     </div>
   );
-}
-
-function ClientOnly({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-  return <>{children}</>;
 }
 
 function TestimonialsCarousel() {
@@ -530,7 +524,7 @@ function IndexPage() {
           </div>
 
           {/* RIGHT: Service selector */}
-          <div className="flex flex-col lg:col-start-2">
+          <div id="quote-form" className="flex flex-col scroll-mt-6 lg:col-start-2">
             <BookingPanel />
 
             {/* Trust badges */}

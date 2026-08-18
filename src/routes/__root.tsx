@@ -332,7 +332,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "https://gomovers.com.au/" },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
@@ -366,6 +365,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
             __html:
               '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=27379141638344500&ev=PageView&noscript=1" />',
           }}
+        />
+        {/* Cloudflare Web Analytics */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "2bae1289513e411ba4b10a357ae92778"}'
         />
       </head>
       <body>

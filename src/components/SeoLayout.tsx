@@ -42,7 +42,7 @@ export function SeoLayout({ children }: { children: React.ReactNode }) {
 
 export function TrustStrip() {
   const items = [
-    { icon: Star, text: "4.9★ from 1,400+ reviews" },
+    { icon: Star, text: "4.9★ from 1,500+ reviews" },
     { icon: Truck, text: "4,200+ moves" },
     { icon: Shield, text: "Insured to $50,000" },
   ];

@@ -27,7 +27,7 @@ export const SERVICES: Service[] = [
     name: "Gold Coast ↔ Brisbane",
     title: "Gold Coast to Brisbane Removalists — Hourly, Door-to-Door | GoMovers",
     description:
-      "Moving between the Gold Coast and Brisbane? 2 movers + truck from $160/hr + GST, door-to-door, fuel included. No fuel levy, no call-out fee. 4.9★ from 1,400+ reviews.",
+      "Moving between the Gold Coast and Brisbane? 2 movers + truck from $160/hr + GST, door-to-door, fuel included. No fuel levy, no call-out fee. 4.9★ from 1,500+ reviews.",
     h1: "Gold Coast to Brisbane removalists",
     priceLine: "From $160/hr + GST · door-to-door · fuel included",
     intro: [

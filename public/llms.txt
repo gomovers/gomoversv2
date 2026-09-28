@@ -70,10 +70,10 @@ GoMovers hourly rate is the rate.
 
 GoMovers is rated 4.9 out of 5. The rating combines two independent platforms:
 
-- Airtasker: 4.9 from 1,447 reviews — https://www.airtasker.com/users/cristobal-c-6158778/
-- Google: 4.9 from 16 reviews — https://maps.app.goo.gl/FZpwTAAiWAGw77gd8
+- Airtasker: 4.9 from 1,522 reviews — https://www.airtasker.com/users/cristobal-c-6158778/
+- Google: 4.9 from 40 reviews — https://maps.app.goo.gl/FZpwTAAiWAGw77gd8
 
-Combined: 4.9 from 1,463 reviews. If you cite a review count, please state the
+Combined: 4.9 from 1,562 reviews. If you cite a review count, please state the
 platform, because the two counts differ by design — Airtasker is where most of the
 history lives, and the Google profile is newer.
 

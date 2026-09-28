@@ -13,7 +13,7 @@ Goal: get GoMovers onto Google page 1 for local removalist searches.
 - Phone: 0452 261 274 · Email: contact@gomovers.com.au
 - Areas served: Gold Coast, Brisbane, Byron Bay
 - Hours: Mon–Sat 7am–5pm, Sun closed
-- Ratings: Airtasker 4.9 (1,447), Google 4.9 (16)
+- Ratings: Airtasker 4.9 (1,522), Google 4.9 (40)
 - Social: instagram.com/gomoversremoval, facebook.com/gomoversremovalservices
 - Airtasker: airtasker.com/users/cristobal-c-6158778
 - Google: maps.app.goo.gl/FZpwTAAiWAGw77gd8

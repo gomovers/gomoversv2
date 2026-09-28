@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Book a Move — GoMovers | Gold Coast · Brisbane · Byron Bay" },
-      { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. 1,447+ five-star reviews." },
+      { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. 1,522+ five-star reviews." },
     ],
     links: [{ rel: "canonical", href: "https://gomovers.com.au/" }],
     scripts: [
@@ -163,7 +163,7 @@ function SocialProofBadges() {
       >
         <Star className="h-5 w-5 fill-current text-brand" />
         <span className="text-sm font-bold text-primary">4.9 on Airtasker</span>
-        <span className="text-sm text-muted-foreground">· 1,447 reviews</span>
+        <span className="text-sm text-muted-foreground">· 1,522 reviews</span>
       </a>
       <a
         href="https://maps.app.goo.gl/FZpwTAAiWAGw77gd8"
@@ -173,7 +173,7 @@ function SocialProofBadges() {
       >
         <Star className="h-5 w-5 fill-current text-brand" />
         <span className="text-sm font-bold text-primary">4.9 on Google</span>
-        <span className="text-sm text-muted-foreground">· 16 reviews</span>
+        <span className="text-sm text-muted-foreground">· 40 reviews</span>
       </a>
     </div>
   );
@@ -497,7 +497,7 @@ function IndexPage() {
                 ))}
               </div>
               <span className="text-sm font-semibold text-primary">
-                4.9 · 1,447 reviews
+                4.9 · 1,522 reviews
               </span>
             </div>
           </div>
@@ -512,7 +512,7 @@ function IndexPage() {
             >
               <Star className="h-3.5 w-3.5 shrink-0 fill-current text-brand" />
               <span className="text-[13px] font-bold text-primary">4.9 Airtasker</span>
-              <span className="text-[13px] text-muted-foreground">· 1,447</span>
+              <span className="text-[13px] text-muted-foreground">· 1,522</span>
             </a>
             <a
               href="https://maps.app.goo.gl/FZpwTAAiWAGw77gd8"
@@ -522,7 +522,7 @@ function IndexPage() {
             >
               <Star className="h-3.5 w-3.5 shrink-0 fill-current text-brand" />
               <span className="text-[13px] font-bold text-primary">4.9 Google</span>
-              <span className="text-[13px] text-muted-foreground">· 16</span>
+              <span className="text-[13px] text-muted-foreground">· 40</span>
             </a>
           </div>
 
@@ -533,7 +533,7 @@ function IndexPage() {
             {/* Trust badges */}
             <div className="mt-6 grid grid-cols-2 gap-3 rounded-2xl bg-secondary p-4 sm:grid-cols-4">
               {[
-                { label: "1,447 5-star reviews", icon: Star },
+                { label: "1,522 5-star reviews", icon: Star },
                 { label: "4,200+ moves served", icon: Truck },
                 { label: "Fully insured $50k", icon: Shield },
                 { label: "Door-to-door billing", icon: Home },
@@ -663,7 +663,7 @@ function IndexPage() {
             GoMovers charges honest hourly rates — what you see is what you pay, with no
             hidden fees or fuel levies. Every job includes 2 experienced movers, a truck,
             fuel, blankets and trolleys. We're fully insured up to $50,000 and have earned
-            4.9 stars from over 1,400 customers across Airtasker and Google.
+            4.9 stars from over 1,500 customers across Airtasker and Google.
           </p>
         </section>
 

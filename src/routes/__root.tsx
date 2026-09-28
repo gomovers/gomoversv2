@@ -85,8 +85,8 @@ const BUSINESS_SCHEMA = {
     "@type": "AggregateRating",
     ratingValue: "4.9",
     bestRating: "5",
-    ratingCount: "1463",
-    reviewCount: "1463",
+    ratingCount: "1562",
+    reviewCount: "1562",
   },
   // Rate card, machine-readable. This is what lets an assistant compare
   // GoMovers on price instead of skipping it for lack of data.
@@ -321,10 +321,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "GoMovers — Gold Coast & Brisbane Removalists | from $160/hr" },
-      { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. Rated 4.9 from 1,463 reviews across Airtasker and Google. Serving Gold Coast, Brisbane & Byron Bay." },
+      { name: "description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck. Door-to-door billing. Fully insured. Rated 4.9 from 1,562 reviews across Airtasker and Google. Serving Gold Coast, Brisbane & Byron Bay." },
       { name: "author", content: "GoMovers" },
       { property: "og:title", content: "GoMovers — Gold Coast & Brisbane Removalists | from $160/hr" },
-      { property: "og:description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck, fuel & blankets included. 4.9 stars from 1,463 reviews. Book online in 2 minutes." },
+      { property: "og:description", content: "Honest hourly rates from $160/hr + GST. 2 movers + truck, fuel & blankets included. 4.9 stars from 1,562 reviews. Book online in 2 minutes." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://gomovers.com.au" },
       { name: "twitter:card", content: "summary" },

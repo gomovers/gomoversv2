@@ -192,7 +192,7 @@ export function ChatWidgetPanel({ onClose }: { onClose: () => void }) {
       const offHours = !isBusinessHours();
       const priceLine = formatPriceLine(result.quote);
       const service = result.quote?.service ?? "your move";
-      let msg = `Perfect. For a ${service} from ${form.origin_suburb} to ${form.destination_suburb}, you're looking at **${priceLine}** — 2 movers, truck, fuel, blankets and trolleys all included, fully insured to $50k. No hidden fees, no fuel levy. We're rated 4.9★ across 1,400+ reviews with 4,200+ moves done.`;
+      let msg = `Perfect. For a ${service} from ${form.origin_suburb} to ${form.destination_suburb}, you're looking at **${priceLine}** — 2 movers, truck, fuel, blankets and trolleys all included, fully insured to $50k. No hidden fees, no fuel levy. We're rated 4.9★ across 1,500+ reviews with 4,200+ moves done.`;
       if (offHours) msg += " We're closed right now, but we'll get back to you first thing.";
       say(msg);
       trackChatLead();

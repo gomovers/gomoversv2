@@ -155,7 +155,7 @@ function SevenMistakesPage() {
         <div className="mt-16 rounded-3xl bg-primary px-8 py-10 text-center text-primary-foreground">
           <h2 className="text-2xl font-bold">Ready to move the right way?</h2>
           <p className="mx-auto mt-2 max-w-md text-primary-foreground/80">
-            GoMovers — Gold Coast &amp; Brisbane removalists. Honest hourly rates from $160/hr + GST, fully insured to $50k, 4.9 stars from 1,400+ reviews.
+            GoMovers — Gold Coast &amp; Brisbane removalists. Honest hourly rates from $160/hr + GST, fully insured to $50k, 4.9 stars from 1,500+ reviews.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link

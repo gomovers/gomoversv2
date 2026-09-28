@@ -8,7 +8,7 @@ GoMovers is a removalist (moving) business serving Gold Coast, Brisbane and Byro
 - Address: Unit 3/26 William St, Mermaid Beach QLD 4218
 - Phone: 0452 261 274
 - Domain: gomovers.com.au (Google Workspace email on same domain — never touch its MX/TXT records in Cloudflare, it breaks email)
-- Reviews shown on site (4.9 / ~1,461) come from the Airtasker account, reconciled with Google (1,447 + 16) — don't recompute without checking both sources.
+- Reviews shown on site (4.9 / 1,562) combine Airtasker and Google (1,522 + 40, checked 28 Sep 2026) — don't recompute without checking both sources.
 
 ## Commands
 

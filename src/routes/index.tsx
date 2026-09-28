@@ -7,6 +7,8 @@ import { Truck, Home, Building2, Package, Piano, Sofa, Shield, Star, Phone, Arro
 import { createBooking } from "@/server/createBooking";
 import { GuideDownload } from "@/components/GuideDownload";
 import { ClientOnly } from "@/components/ClientOnly";
+import { AREAS } from "@/data/areas";
+import { SERVICES } from "@/data/services";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -614,6 +616,36 @@ function IndexPage() {
                 and Brisbane–Byron relocations.
               </p>
             </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {AREAS.map((a) => (
+              <Link
+                key={a.slug}
+                to="/removalists/$area"
+                params={{ area: a.slug }}
+                className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-primary hover:border-brand"
+              >
+                Removalists {a.name}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {SERVICES.map((sv) => (
+              <Link
+                key={sv.slug}
+                to="/services/$service"
+                params={{ service: sv.slug }}
+                className="rounded-full border border-border bg-secondary px-4 py-2 text-sm font-semibold text-primary hover:border-brand"
+              >
+                {sv.name}
+              </Link>
+            ))}
+            <Link
+              to="/pricing"
+              className="rounded-full border border-border bg-secondary px-4 py-2 text-sm font-semibold text-primary hover:border-brand"
+            >
+              Prices &amp; rate card
+            </Link>
           </div>
         </section>
 

@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RemovalistsIndexRouteImport } from './routes/removalists/index'
+import { Route as ServicesServiceRouteImport } from './routes/services/$service'
+import { Route as RemovalistsAreaRouteImport } from './routes/removalists/$area'
 import { Route as Guides7MovingMistakesRouteImport } from './routes/guides/7-moving-mistakes'
 
 const PricingRoute = PricingRouteImport.update({
@@ -23,6 +26,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RemovalistsIndexRoute = RemovalistsIndexRouteImport.update({
+  id: '/removalists/',
+  path: '/removalists/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesServiceRoute = ServicesServiceRouteImport.update({
+  id: '/services/$service',
+  path: '/services/$service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalistsAreaRoute = RemovalistsAreaRouteImport.update({
+  id: '/removalists/$area',
+  path: '/removalists/$area',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Guides7MovingMistakesRoute = Guides7MovingMistakesRouteImport.update({
   id: '/guides/7-moving-mistakes',
   path: '/guides/7-moving-mistakes',
@@ -33,30 +51,61 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
   '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
+  '/removalists/$area': typeof RemovalistsAreaRoute
+  '/services/$service': typeof ServicesServiceRoute
+  '/removalists/': typeof RemovalistsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
   '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
+  '/removalists/$area': typeof RemovalistsAreaRoute
+  '/services/$service': typeof ServicesServiceRoute
+  '/removalists': typeof RemovalistsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pricing': typeof PricingRoute
   '/guides/7-moving-mistakes': typeof Guides7MovingMistakesRoute
+  '/removalists/$area': typeof RemovalistsAreaRoute
+  '/services/$service': typeof ServicesServiceRoute
+  '/removalists/': typeof RemovalistsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pricing' | '/guides/7-moving-mistakes'
+  fullPaths:
+    | '/'
+    | '/pricing'
+    | '/guides/7-moving-mistakes'
+    | '/removalists/$area'
+    | '/services/$service'
+    | '/removalists/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pricing' | '/guides/7-moving-mistakes'
-  id: '__root__' | '/' | '/pricing' | '/guides/7-moving-mistakes'
+  to:
+    | '/'
+    | '/pricing'
+    | '/guides/7-moving-mistakes'
+    | '/removalists/$area'
+    | '/services/$service'
+    | '/removalists'
+  id:
+    | '__root__'
+    | '/'
+    | '/pricing'
+    | '/guides/7-moving-mistakes'
+    | '/removalists/$area'
+    | '/services/$service'
+    | '/removalists/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PricingRoute: typeof PricingRoute
   Guides7MovingMistakesRoute: typeof Guides7MovingMistakesRoute
+  RemovalistsAreaRoute: typeof RemovalistsAreaRoute
+  ServicesServiceRoute: typeof ServicesServiceRoute
+  RemovalistsIndexRoute: typeof RemovalistsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,6 +124,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/removalists/': {
+      id: '/removalists/'
+      path: '/removalists'
+      fullPath: '/removalists/'
+      preLoaderRoute: typeof RemovalistsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$service': {
+      id: '/services/$service'
+      path: '/services/$service'
+      fullPath: '/services/$service'
+      preLoaderRoute: typeof ServicesServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removalists/$area': {
+      id: '/removalists/$area'
+      path: '/removalists/$area'
+      fullPath: '/removalists/$area'
+      preLoaderRoute: typeof RemovalistsAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guides/7-moving-mistakes': {
       id: '/guides/7-moving-mistakes'
       path: '/guides/7-moving-mistakes'
@@ -89,6 +159,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PricingRoute: PricingRoute,
   Guides7MovingMistakesRoute: Guides7MovingMistakesRoute,
+  RemovalistsAreaRoute: RemovalistsAreaRoute,
+  ServicesServiceRoute: ServicesServiceRoute,
+  RemovalistsIndexRoute: RemovalistsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

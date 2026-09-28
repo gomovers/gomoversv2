@@ -384,6 +384,11 @@ function PricingPage() {
             Rivers — plus interstate Queensland–NSW relocations. Open Monday to Saturday,
             7am–5pm. Closed Sunday.
           </p>
+          <p className="mt-3 text-sm">
+            <Link to="/removalists" className="font-semibold text-brand hover:underline">
+              See all areas we serve →
+            </Link>
+          </p>
           <p className="mt-4 text-sm text-muted-foreground">
             GoMovers · Unit 3/26 William St, Mermaid Beach QLD 4218 ·{" "}
             <a href="tel:0452261274" className="font-semibold text-primary">
